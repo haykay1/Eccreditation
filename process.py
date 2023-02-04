@@ -22,7 +22,7 @@ class Randomness():
                 rsa_cipher = PKCS1_OAEP.new(recipient_key) 
                 enc_AES_key = rsa_cipher.encrypt(AES_key_generate)
 
-                # original_message = open(p, 'rb')
+               
                 textFile = p.read()
                 textFile = bytearray(textFile) 
 
@@ -51,7 +51,7 @@ class Randomness():
                 enc_AES_key,nonce, tag,ciphertext =
                 [file_in.read(x) for x in (private_key.size_in_bytes(),16,16,-1) ]
 
-                # Decrypt the session key with the private RSA key
+                
                 cipher_rsa = PKCS1_OAEP.new(private_key)
                 AES_key = cipher_rsa.decrypt(enc_AES_key)
                 # Decrypt the data with the AES session key
